@@ -48,19 +48,31 @@ ler ficheiros csv com pandas {
 }
 demorou ~1 minuto
 
-2.1) escolher os taxis iniciais(DOING)
+2.1) escolher os taxis iniciais
 -- como disse inicialmente estavamos a usar o contágio com 10 taxis completamente aleatórios
 agora temos de escolher 2 taxis aleatoríos, um no porto e um em lisboa, escolhendo entre os 10 primeiros a aparecer nos dois conselhos
 --- Criação  do script first_cases.py
 --- alteração do script de geração para usar os dois casos
 
-3) Desenhar graf da evo (TODO)
+3) Desenhar graf da evo 
+Fiz uma animação para ir mundando os dados e axes do graf de acordo com o tempo e nº de infetados
+Para organizar melhor os diferentes plos usamos o gridspec do matplotlib
 
 
-
-4)Feature1(BRUNO -- TODO)
+4)Feature1(BRUNO -- (DOING))
 ---desenhar o mapa dos trajetos dos infetados
 ---tentar fazer uma representação 3d
 
 
 5)Feature2(Carvalho -- TODO)
+
+6) Extras (todo)
+--tentar guardar os arrays de cor antes da execução a ver se poupa recursos(done o problema não era o programa a crashar mas sim o tempo que estava mal calculado -- voltar a fazer caso acha problemas de performance)
+
+--Guardar animação(mp4 ou gif)
+--criar script com opções{
+    -especificar user da bd
+    -gerar novos offsets
+    -guardar animação em vez de mostrar
+
+}
