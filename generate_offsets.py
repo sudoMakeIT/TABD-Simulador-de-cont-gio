@@ -22,7 +22,7 @@ taxis_x ={}
 taxis_y ={}
 
 ts_i = 1570665600
-ts_f = 1570667000
+ts_f = ts_i + 10*8630
 
 array_size = int(24*60*60/step)
 

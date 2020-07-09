@@ -60,19 +60,35 @@ Para organizar melhor os diferentes plos usamos o gridspec do matplotlib
 
 
 4)Feature1(BRUNO -- (DOING))
----desenhar o mapa dos trajetos dos infetados
----tentar fazer uma representação 3d
+1) tentar desenhar o trajeto animado de um carro(acho que funcionou)
+    1.1) criar offsets para o track (dificulades por cada ts ter vários pontos)
+2) juntar todos os carros(demasiado pesado)
+    2.1) criei um ficheiro só para os 50 primeiros frames com todos os carros 
+3) juntar todos os carros mas não diferenciar os carros ( juntar apenas os pontos a desenhar por ts)
+3*) Não está a desenhar bem os trajetos
+    3.1) não posso juntar todos os pontos de todos os trajetos numa lista e desenhar
+    3.2) tenho de fazer uma lista com cada trajeto e ir desenhando 
+        --- mais organizado mas não está a desenhar corretaente apesar dos valores serem os corretos(por resolver????) --- agora nem sequer consigo criar um track sem estourar --- estava a enviar para o plot coordenadas em str
+4) limitar aos carros infetados 
+    4.1) criar o ficheiro apenas com os trajetos dos infetados num determinado ts
+        --criar um ficheiro por ts com os ids dos taxis 
+      
+
 
 
 5)Feature2(Carvalho -- TODO)
+????????
+????????
+????????
+
 
 6) Extras (todo)
---tentar guardar os arrays de cor antes da execução a ver se poupa recursos(done o problema não era o programa a crashar mas sim o tempo que estava mal calculado -- voltar a fazer caso acha problemas de performance)
+--tentar guardar os arrays de cor antes da execução a ver se poupa recursos(done o problema não era o programa a crashar mas sim o tempo que estava mal calculado 
+-- voltar a fazer caso acha problemas de performance)
 
---Guardar animação(mp4 ou gif)
 --criar script com opções{
+    --mode & debug
     -especificar user da bd
     -gerar novos offsets
     -guardar animação em vez de mostrar
-
 }

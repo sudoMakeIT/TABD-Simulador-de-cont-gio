@@ -4,7 +4,7 @@ from matplotlib.animation import FuncAnimation
 import random
 import csv
 import copy
-import first_cases as fc
+import generate_first_cases as fc
 
 def contagio():
     for i in range(1, len(offsets)):
