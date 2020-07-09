@@ -1,6 +1,6 @@
 1) animar mapa segindo exemplo do stor
 
-2) Simular o contagio
+2) Simular o contagio diretamente n
 1º tentativa de contágio
 Criação de um array
 	virusState em que cada taxi é 1 se infetado, 0 se não
@@ -72,7 +72,8 @@ Para organizar melhor os diferentes plos usamos o gridspec do matplotlib
 4) limitar aos carros infetados 
     4.1) criar o ficheiro apenas com os trajetos dos infetados num determinado ts
         --criar um ficheiro por ts com os ids dos taxis 
-      
+5)*Extra)
+    Criação do ficheiro main, para uma melhor organização/utilização
 
 
 

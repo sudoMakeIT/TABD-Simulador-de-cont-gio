@@ -2,8 +2,8 @@ import psycopg2
 import random
 import numpy as np
 
-def firstCases():
-    conn = psycopg2.connect("dbname=postgres user=brunopinto")
+def firstCases(user):
+    conn = psycopg2.connect("dbname=postgres user=" + user)
     cursor_psql = conn.cursor()
 
     #primeiros 10 no porto

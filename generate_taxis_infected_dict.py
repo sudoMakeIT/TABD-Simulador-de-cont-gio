@@ -9,42 +9,41 @@ from postgis.psycopg import register
 import csv
 import pandas as pd
 
+def generate_taxis_infected_dict(user):
+    conn = psycopg2.connect("dbname=postgres user=" + user)
+    register(conn)
+    cursor_psql = conn.cursor()
 
+    sql = """select distinct taxi from tracks order by 1"""
+    cursor_psql.execute(sql)
+    results = cursor_psql.fetchall()
 
-conn = psycopg2.connect("dbname=postgres user=brunopinto")
-register(conn)
-cursor_psql = conn.cursor()
+    taxis_dict = {}
+    i = 0
+    for taxi in results:
+        taxis_dict[i] = taxi[0]
+        i+=1
 
-sql = """select distinct taxi from tracks order by 1"""
-cursor_psql.execute(sql)
-results = cursor_psql.fetchall()
+    print(taxis_dict[16])
 
-taxis_dict = {}
-i = 0
-for taxi in results:
-    taxis_dict[i] = taxi[0]
-    i+=1
+    infected_ids = []
+    virusStateOffset = pd.read_csv('files/virusState.csv', header=None, low_memory=True)
+    # print(virusStateOffset.loc[0].to_list())
 
-print(taxis_dict[16])
+    for i in range(0,8640):
+        inf = virusStateOffset.loc[i].to_list()
+        index = 0
+        temp = []
+        for x in inf:
+            if x == 1:
+                # print(index)
+                temp.append(taxis_dict[index])
+            index += 1
+        infected_ids.append(temp)
 
-infected_ids = []
-virusStateOffset = pd.read_csv('files/virusState.csv', header=None, low_memory=True)
-# print(virusStateOffset.loc[0].to_list())
+    print("Writting infected ids")
+    with open("files/taxis_inf.csv", "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerows(infected_ids)
 
-for i in range(0,8640):
-    inf = virusStateOffset.loc[i].to_list()
-    index = 0
-    temp = []
-    for x in inf:
-        if x == 1:
-            # print(index)
-            temp.append(taxis_dict[index])
-        index += 1
-    infected_ids.append(temp)
-
-print("Writting infected ids")
-with open("files/taxis_inf.csv", "w", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerows(infected_ids)
-
-conn.close()
+    conn.close()
