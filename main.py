@@ -27,7 +27,7 @@ if __name__ == "__main__":
         if(not path.exists("files/offsets3.csv")):
             print("No offset file, python3 main -h")
             exit()
-        if(not path.exists("files/lenState.csv") or not path.exists("files/tracks_inf.csv") or not path.exists("files/sizeState.csv") or not path.exists("files/taxis_inf.csv") or not path.exists("files/virusState.csv")):
+        if(not path.exists("files/lenState.csv") or not path.exists("files/distrito_inf.csv") or not path.exists("files/tracks_inf.csv") or not path.exists("files/sizeState.csv") or not path.exists("files/taxis_inf.csv") or not path.exists("files/virusState.csv")):
             print("Contagion files missing, python3 main -h")
             exit()
         plot_track.show_plot(args.user,args.mode)

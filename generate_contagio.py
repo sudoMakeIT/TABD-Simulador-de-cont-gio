@@ -8,6 +8,7 @@ import copy
 import generate_first_cases as fc
 import generate_taxis_infected_dict as td
 import generate_tracks as gt
+import generate_infec_conc as distinf
 
 def generate_contagio(user):
     print("Initializing ...")
@@ -109,4 +110,9 @@ def generate_contagio(user):
     td.generate_taxis_infected_dict(user)
     #gerar tracks dos infetados
     gt.generate_tracks(user)
+    #gerar inf em porto,libos
+    distinf.generate_infec_conc(user)
+
+if __name__ == "__main__":
+    generate_contagio("brunopinto")
     
