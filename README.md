@@ -1,10 +1,10 @@
-##Requesitos
+**Requesitos**
 
 Instalar postgres/postgis
 Importar as bases de dados fornecidas nas aulas
 
 
-##Execução
+**Execução**
 
 Para ver os comandos disponiveis 
 
@@ -12,9 +12,7 @@ Para ver os comandos disponiveis
 python3 main.py -h
 ```
 
-
-
-##Descrição dos ficheiros
+**Descrição dos ficheiros**
 
 lenState --> nº de infetados por ts
 offsets3 --> posição de cada taxis por ts
